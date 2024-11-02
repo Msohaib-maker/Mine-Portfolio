@@ -1,3 +1,8 @@
+## Description
+
+Art Mind Website basically features the talent of top tier artists through their portrayal of Art
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
