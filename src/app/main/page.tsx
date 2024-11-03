@@ -76,7 +76,7 @@ export default function Main(){
                         { name: "Node", level: 6 }
                     ].map((skill) => (
                         <div key={skill.name}>
-                        <p className="font-semibold pb-4">{skill.name}</p>
+                        <p className="pb-4">{skill.name}</p>
                         <div className="w-96 bg-gray-300 rounded-full h-2.5">
                             <div
                             className="bg-purple-600 h-2.5 rounded-full"
@@ -89,20 +89,47 @@ export default function Main(){
                 </div>
   
                 {/* Images Section */}
-                <div className="w-full p-8 col-span-1 justify-center justify-self-center space-y-8">
-                    <img
+                <div className="flex flex-col space-y-8 items-center">
+    <div className="group relative">
+        <a
+            href="https://github.com/Msohaib-maker/Neon-Runner-2024"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+        >
+            <div className="relative w-84 h-60 rounded-lg overflow-hidden border-4" style={{ borderColor: 'rgb(29, 39, 29)' }}>
+                <img
                     src="/images/Project-tbnail.png"
-                    alt="Avatar 1"
-                    className="rounded-lg h-60 w-84 border-4"
-                    style={{ borderColor: 'rgb(29, 39, 29)' }}
-                    />
-                    <img
+                    alt="Neon Runner Project Thumbnail"
+                    className="w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+            </div>
+            <p className="text-center mt-2 font-semibold group-hover:text-gray-500 transition-colors duration-300">Era Z</p>
+        </a>
+    </div>
+
+    <div className="group relative">
+        <a
+            href="https://github.com/Msohaib-maker/Cyber-Futsu-Game"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+        >
+            <div className="relative w-84 h-60 rounded-lg overflow-hidden border-4" style={{ borderColor: 'rgb(29, 39, 29)' }}>
+                <img
                     src="/images/Project-tbnail(1).png"
-                    alt="Avatar 2"
-                    className="rounded-lg h-60 w-84 border-4"
-                    style={{ borderColor: 'rgb(29, 39, 29)' }}
-                    />
-                </div>
+                    alt="Cyber Futsu Project Thumbnail"
+                    className="w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+            </div>
+            <p className="text-center mt-2 font-semibold group-hover:text-gray-500 transition-colors duration-300">Cyber Futsu</p>
+        </a>
+    </div>
+</div>
+
+
             </div>
             
             <br></br>
