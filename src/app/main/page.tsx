@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Main(){
     return(
@@ -133,7 +134,7 @@ export default function Main(){
             </div>
             
             <br></br>
-
+            <Analytics/>
         </div>
     );
 }
