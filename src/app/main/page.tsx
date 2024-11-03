@@ -56,7 +56,7 @@ export default function Main(){
             <div className="grid grid-cols-2 gap-8 p-8">
                 
                 {/* Skills Section */}
-                <div >
+                <div className="w-full p-8 col-span-1 justify-center justify-self-center bg-slate-900 text-lg">
                     <h1 className="text-4xl font-bold mb-6">Skills</h1>
                     <div className="space-y-4">
                     {[
@@ -77,7 +77,7 @@ export default function Main(){
                     ].map((skill) => (
                         <div key={skill.name}>
                         <p className="font-semibold pb-4">{skill.name}</p>
-                        <div className="w-80 bg-gray-300 rounded-full h-2.5">
+                        <div className="w-96 bg-gray-300 rounded-full h-2.5">
                             <div
                             className="bg-purple-600 h-2.5 rounded-full"
                             style={{ width: `${skill.level * 10}%` }}
@@ -89,18 +89,18 @@ export default function Main(){
                 </div>
   
                 {/* Images Section */}
-                <div className="space-y-4">
+                <div className="w-full p-8 col-span-1 justify-center justify-self-center space-y-8">
                     <img
-                    src="/images/avatar.jpg"
+                    src="/images/Project-tbnail.png"
                     alt="Avatar 1"
-                    className="rounded-lg h-48 w-72 border-2"
-                    style={{ borderColor: 'rgb(26, 10, 105)' }}
+                    className="rounded-lg h-60 w-84 border-4"
+                    style={{ borderColor: 'rgb(29, 39, 29)' }}
                     />
                     <img
-                    src="/images/avatar.jpg"
+                    src="/images/Project-tbnail(1).png"
                     alt="Avatar 2"
-                    className="rounded-lg h-48 w-72 border-2"
-                    style={{ borderColor: 'rgb(26, 10, 105)' }}
+                    className="rounded-lg h-60 w-84 border-4"
+                    style={{ borderColor: 'rgb(29, 39, 29)' }}
                     />
                 </div>
             </div>
