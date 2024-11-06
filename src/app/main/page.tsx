@@ -93,7 +93,7 @@ export default function Main(){
                 <div className="flex flex-col space-y-8 items-center">
     <div className="group relative">
         <a
-            href="https://github.com/Msohaib-maker/Neon-Runner-2024"
+            href="https://mranonymous22.itch.io/neon-runner"
             target="_blank"
             rel="noopener noreferrer"
             className="block"
@@ -112,7 +112,7 @@ export default function Main(){
 
     <div className="group relative">
         <a
-            href="https://github.com/Msohaib-maker/Cyber-Futsu-Game"
+            href="https://mranonymous22.itch.io/cyber-futsu"
             target="_blank"
             rel="noopener noreferrer"
             className="block"
