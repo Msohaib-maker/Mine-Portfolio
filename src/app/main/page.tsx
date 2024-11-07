@@ -1,9 +1,13 @@
 import Link from "next/link"
 import { Analytics } from "@vercel/analytics/react"
+import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 export default function Main(){
     return(
-        <div className="flex flex-col items-center">
+        <div>
+            <Navbar/>
+            <div className="flex flex-col items-center">
             <div className="grid grid-cols-2 items-center p-10">
                 <img
                     src="/images/avatar.jpg"
@@ -135,6 +139,11 @@ export default function Main(){
             
             <br></br>
             <Analytics/>
+            
         </div>
+
+        <Footer/>
+        </div>
+        
     );
 }
