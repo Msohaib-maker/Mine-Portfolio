@@ -4,15 +4,15 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav className="absolute right-0 top-0 pr-32 pt-8">
-      <ul className="flex space-x-8">
+    <nav className="fixed w-full bg-black bg-opacity-50 backdrop-blur-sm z-50">
+      <ul className="flex justify-end space-x-8 p-6 pr-12 md:pr-32">
         <li>
-        <Link href="/main" className="text-white hover:text-gray-400 text-xl ">
+          <Link href="/main" className="text-white hover:text-gray-400 text-lg md:text-xl transition-colors duration-200">
             Home
           </Link>
         </li>
         <li>
-          <Link href="/portfolio" className="text-white hover:text-gray-400 text-xl  ">
+          <Link href="/portfolio" className="text-white hover:text-gray-400 text-lg md:text-xl transition-colors duration-200">
             Portfolio
           </Link>
         </li>
