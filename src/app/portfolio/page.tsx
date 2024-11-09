@@ -9,28 +9,25 @@ export default function Portfolio(){
         {name: "Cyber Futsu", Tech: "Unity 3D, C#", img: "/images/Project-tbnail(1).png"},
         {name: "Fantisi Fill", Tech: "Python PyGame", img: "/images/Project-tbnail(2).png"},
         {name: "Warone 1980", Tech: "Unity 3D, C#, Shaders", img: "/images/Project-tbnail(3).png"},
-    ]
-
-
-    const Grid = () => {
-        return(
-            <div className="grid grid-cols-3 gap-8 p-12">
-
-                {
-                    ProjectList.map((ele) => (
-                        <div className="bg-slate-900 text-white p-4 rounded-lg flex flex-col items-center">
-                            <img src={ele.img} alt="Item 1 Image" className="mb-4" />
-                            <h3 className="text-lg font-semibold">{ele.name}</h3>
-                            <p className="text-sm mt-2">{ele.Tech}</p>
-                            <br></br>
-                        </div>
-                    ))
-                }
-
-            
-            </div>
+      ]
+      
+      const Grid = () => {
+        return (
+          <div className="grid grid-cols-3 gap-8 p-12">
+            {
+              ProjectList.map((ele) => (
+                <div key={ele.name} className="bg-slate-900 text-white p-4 rounded-lg flex flex-col items-center">
+                  <img src={ele.img} alt={`${ele.name} Image`} className="mb-4" />
+                  <h3 className="text-lg font-semibold">{ele.name}</h3>
+                  <p className="text-sm mt-2">{ele.Tech}</p>
+                  <br />
+                </div>
+              ))
+            }
+          </div>
         );
     }
+      
 
     return(
         <div>

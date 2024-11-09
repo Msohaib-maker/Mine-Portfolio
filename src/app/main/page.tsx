@@ -64,33 +64,31 @@ export default function Main(){
                 <div className="w-full p-8 col-span-1 justify-center justify-self-center bg-slate-900 text-lg">
                     <h1 className="text-4xl font-bold mb-6">Skills</h1>
                     <div className="space-y-4">
-                    {[
-                        { name: "JavaScript", level: 8 },
-                        { name: "HTML", level: 8 },
-                        { name: "CSS", level: 8 },
-                        { name: "React JS", level: 8 },
-                        { name: "Next JS", level: 8 },
-                        { name: "C++", level: 6 },
-                        { name: "C#", level: 7 },
-                        { name: "OpenGL", level: 3 },
-                        { name: "Unity", level: 7 },
-                        { name: "Java", level: 8 },
-                        { name: "DevOps", level: 6 },
-                        { name: "Git", level: 7 },
-                        { name: "Figma", level: 8 },
-                        { name: "Node", level: 6 }
-                    ].map((skill) => (
-                        <div key={skill.name}>
-                        <p className="pb-4">{skill.name}</p>
-                        <div className="w-96 bg-gray-300 rounded-full h-2.5">
-                            <div
-                            className="bg-purple-600 h-2.5 rounded-full"
-                            style={{ width: `${skill.level * 10}%` }}
-                            ></div>
-                        </div>
-                        </div>
-                    ))}
-                    </div>
+  {[ 
+    { name: "JavaScript", level: 8 },
+    { name: "HTML", level: 8 },
+    { name: "CSS", level: 8 },
+    { name: "React JS", level: 8 },
+    { name: "Next JS", level: 8 },
+    { name: "C++", level: 6 },
+    { name: "C#", level: 7 },
+    { name: "OpenGL", level: 3 },
+    { name: "Unity", level: 7 },
+    { name: "Java", level: 8 },
+    { name: "DevOps", level: 6 },
+    { name: "Git", level: 7 },
+    { name: "Figma", level: 8 },
+    { name: "Node", level: 6 }
+  ].map((skill, index) => (
+    <div key={index}>  {/* Add the "key" prop here */}
+      <p className="pb-4">{skill.name}</p>
+      <div className="w-96 bg-gray-300 rounded-full h-2.5">
+        <div className="bg-purple-600 h-2.5 rounded-full" style={{ width: `${skill.level * 10}%` }}></div>
+      </div>
+    </div>
+  ))}
+</div>
+
                 </div>
   
                 {/* Images Section */}
