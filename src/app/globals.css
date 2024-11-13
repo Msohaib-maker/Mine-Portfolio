@@ -29,6 +29,13 @@ footer {
 }
 
 .email-link {
-  color: rgb(90, 90, 255);
+  color: rgb(132, 132, 236);
 }
 
+
+.quote-text{
+  font-style: italic;
+  font-family: "Playwrite HU", cursive;
+  font-optical-sizing: auto;
+  font-weight: 100;
+}

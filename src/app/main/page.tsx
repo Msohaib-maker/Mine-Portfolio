@@ -24,8 +24,8 @@ export default function Main(){
                     }}
                 />
                 <br></br>
-                <h1 className="text-3xl text-center mt-4">
-                    "Your action matters, not words."
+                <h1 className="text-3xl text-center mt-4 quote-text">
+                      ❝ Your action matters, not words. ❞
                 </h1>
             </div>
                 
