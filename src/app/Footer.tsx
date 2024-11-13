@@ -10,13 +10,16 @@ export default function Footer() {
           <br></br>
           <div className="flex justify-center space-x-4 mt-2">
           <a href="https://x.com/Sohaib844590610" target="_blank" rel="noopener noreferrer">
-            <img src="/icons/twitter.png" alt="Twitter" style={{ width: "24px", height: "24px" }} />
+            <img src="/icons/twitter.png" alt="Twitter" style={{ width: "32px", height: "32px" }} />
           </a>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="/icons/instagram.png" alt="Instagram" style={{ width: "24px", height: "24px" }} />
+            <img src="/icons/instagram.png" alt="Instagram" style={{ width: "32px", height: "32px" }} />
           </a>
           <a href="https://www.linkedin.com/in/muhammad-sohaib-8bba7a230/" target="_blank" rel="noopener noreferrer">
-            <img src="/icons/linkedin.png" alt="LinkedIn" style={{ width: "24px", height: "24px" }} />
+            <img src="/icons/linkedin.png" alt="LinkedIn" style={{ width: "32px", height: "32px" }} />
+          </a>
+          <a href="https://github.com/Msohaib-maker" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/github.png" alt="LinkedIn" style={{ width: "32px", height: "32px" }} />
           </a>
 
           
