@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Analytics } from "@vercel/analytics/react"
 import Footer from "../Footer";
 import Navbar from "../Navbar";
+import Image from 'next/image';
 
 export default function Main(){
     return(
@@ -9,16 +10,25 @@ export default function Main(){
             <Navbar/>
             <div className="flex flex-col items-center">
             <div className="grid grid-cols-2 items-center p-10">
-                <img
+            <div className="flex flex-col items-center justify-center">
+                <Image
                     src="/images/avatar.jpg"
-                    className="h-96 w-96 rounded-full justify-self-center self-center"
                     alt="Avatar"
+                    width={400} // Set width and height to the same value
+                    height={400} // Set width and height to the same value for a circle
+                    className="rounded-full aspect-square object-cover"
                     style={{
                         borderWidth: '5px',
                         borderColor: 'rgb(125, 80, 204)',
                         borderStyle: 'solid',
                     }}
                 />
+                <br></br>
+                <h1 className="text-3xl text-center mt-4">
+                    "Your action matters, not words."
+                </h1>
+            </div>
+                
                 <div className="space-y-4 pt-32 pr-10">
                     <div className="description text-left">
                         <h1 className="text-5xl font-bold pb-8">Who am I?</h1>

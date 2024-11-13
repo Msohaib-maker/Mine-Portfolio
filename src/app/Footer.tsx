@@ -5,9 +5,9 @@ export default function Footer() {
     return (
       <footer>
         <div className="container mx-auto">
-          <p>Copyright &copy; Sohaib Amir</p>
+          
+          <p className="text-2xl">Follow us on</p>
           <br></br>
-          <p>Follow us on</p>
           <div className="flex justify-center space-x-4 mt-2">
           <a href="https://x.com/Sohaib844590610" target="_blank" rel="noopener noreferrer">
             <img src="/icons/twitter.png" alt="Twitter" style={{ width: "24px", height: "24px" }} />
@@ -23,6 +23,8 @@ export default function Footer() {
           </div>
           <br></br>
           <p>Contact us on: <a href="mailto:afzalsohaib59@gmail.com" className="email-link">afzalsohaib59@gmail.com</a></p>
+          <br></br>
+          <p>Copyright &copy; Sohaib Amir</p>
         </div>
       </footer>
     );

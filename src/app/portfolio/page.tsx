@@ -33,7 +33,7 @@ export default function Portfolio(){
         <div>
             <Navbar/>
             <div className="pt-32">
-            <h1 className="text-4xl font-bold ml-12">Dev Projects</h1>
+            <h1 className="text-4xl font-bold ml-12">GameDev Projects</h1>
             {Grid()}
             </div>
             
