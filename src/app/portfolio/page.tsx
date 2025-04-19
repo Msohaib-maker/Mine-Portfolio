@@ -1,6 +1,4 @@
 import Footer from "../Footer";
-import Navbar from "../Navbar";
-
 
 export default function Portfolio(){
 
@@ -42,7 +40,6 @@ export default function Portfolio(){
 
     return(
         <div>
-            <Navbar/>
             <div className="pt-32">
             <h1 className="text-4xl font-bold ml-12">GameDev Projects</h1>
             {Grid()}
