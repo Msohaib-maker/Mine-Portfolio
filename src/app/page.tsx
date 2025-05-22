@@ -6,61 +6,55 @@ import Footer from "./Footer";
 export default function Home() {
   return (
     <div>
-            <div className="flex flex-col items-center">
-            <div className="grid grid-cols-2 items-center p-10">
-            <div className="flex flex-col items-center justify-center">
-                <Image
-                    src="/images/avatar.jpg"
-                    alt="Avatar"
-                    width={400} // Set width and height to the same value
-                    height={400} // Set width and height to the same value for a circle
-                    className="rounded-full aspect-square object-cover"
-                    style={{
-                        borderWidth: '10px',
-                        borderColor: 'rgb(15, 23, 100)',
-                        borderStyle: 'solid',
-                    }}
-                />
-                <br></br>
-                <h1 className="text-3xl text-center mt-4 quote-text">
-                      ❝ Your action matters, not words. ❞
-                </h1>
-            </div>
-                
-                <div className="space-y-4 pt-32 pr-10">
-                    <div className="description text-left">
-                        <h1 className="text-5xl font-bold pb-8">Who am I?</h1>
-                        <h2 className="text-lg mt-4">
-                        I am a hardcore and <span role="img" aria-label="rocket">🚀</span> passionate software engineer with a solid foundation in HTML, CSS, JavaScript, React.JS, Next.JS, Unity, OpenGL, C#, C++, and Java. My work centers around creating efficient, scalable applications and smooth deployment workflows, with a strong commitment to best practices in the software industry. My keen interest in Next.js and DevOps drives me to bridge the gap between development and operations, ensuring seamless user experiences and robust backend processes.
-                        </h2>
+        <div className="flex flex-col items-center">
+            <div className="mt-28 px-12 mb-10">
+            <div className="grid grid-cols-2 items-stretch h-auto">
+  <div className="bg-orange-500 rounded-tl-3xl rounded-bl-3xl flex flex-col items-center justify-center p-10 text-white">
+    <Image
+      src="/images/avatar.jpg"
+      alt="Avatar"
+      width={300}
+      height={300}
+      className="rounded-full aspect-square object-cover border-[10px] border-solid border-blue-900"
+    />
+    <h1 className="text-3xl text-center mt-8 italic font-semibold">
+      ❝ Your action matters, not words. ❞
+    </h1>
+  </div>
 
-                        <div className="mt-6 space-y-4">
-                        <p><strong>Here are a few highlights of my accomplishments and skills:</strong></p>
-                        <ul className="list-disc ml-6 space-y-2">
-                            <li>
-                            <strong>Next.js Enthusiast</strong> <span role="img" aria-label="globe">🌐</span>: Leveraged Next.js for multiple high-performance web applications, optimizing load times and enhancing user engagement with server-side rendering and static generation.
-                            </li>
-                            <li>
-                            <strong>Unity & Game Development</strong> <span role="img" aria-label="video game controller">🎮</span>: Created a cyber city environment using Unity HDRP, crafting visually immersive, neon-lit landscapes while keeping frame rates high for an optimal gaming experience.
-                            </li>
-                            <li>
-                            <strong>DevOps Focus</strong> <span role="img" aria-label="tools">🔧</span>: Implemented CI/CD pipelines using GitHub Actions, Docker, and AWS, automating build and deployment processes to reduce release times by 30%.
-                            </li>
-                            <li>
-                            <strong>Full-Stack Versatility</strong> <span role="img" aria-label="computer">💻</span>: Developed end-to-end solutions in JavaScript frameworks (React & Next) and backend languages (C# and Java), enabling cohesive and responsive applications across web and mobile platforms.
-                            </li>
-                            <li>
-                            <strong>Continuous Learner</strong> <span role="img" aria-label="books">📚</span>: Stay up-to-date with the latest tech trends and industry standards, integrating new tools and practices to deliver high-quality, maintainable code.
-                            </li>
-                        </ul>
-                        </div>
+  <div className="border-4 border-white rounded-tr-3xl rounded-br-3xl p-10 overflow-y-auto">
+    <div className="space-y-4 pt-10 pr-4">
+      <div className="description text-left">
+        <h1 className="text-5xl font-bold pb-8 text-white">Who am I?</h1>
+        <h2 className="text-lg mt-4 text-gray-50">
+          I am a hardcore and <span role="img" aria-label="rocket">🚀</span> passionate software engineer with a solid foundation in HTML, CSS, JavaScript, React.JS, Next.JS, Unity, OpenGL, C#, C++, and Java. My work centers around creating efficient, scalable applications and smooth deployment workflows, with a strong commitment to best practices in the software industry. My keen interest in Next.js and DevOps drives me to bridge the gap between development and operations, ensuring seamless user experiences and robust backend processes.
+        </h2>
 
-                        <p className="mt-6">
-                        I’m excited to bring my diverse skill set, from front-end innovations to DevOps automation, to a forward-thinking team. My goal is to craft applications that are both user-friendly and robust, delivering exceptional digital experiences aligned with business objectives.
-                        </p>
-                    </div>
-                </div>
+        <div className="mt-6 space-y-4 text-gray-50">
+          <p><strong>Here are a few highlights of my accomplishments and skills:</strong></p>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>
+              <strong>Next.js Enthusiast</strong> 🌐: Leveraged Next.js for multiple high-performance web applications, optimizing load times and enhancing user engagement with server-side rendering and static generation.
+            </li>
+            <li>
+              <strong>Unity & Game Development</strong> 🎮: Created a cyber city environment using Unity HDRP, crafting visually immersive, neon-lit landscapes while keeping frame rates high for an optimal gaming experience.
+            </li>
+            <li>
+              <strong>DevOps Focus</strong> 🔧: Implemented CI/CD pipelines using GitHub Actions, Docker, and AWS, automating build and deployment processes to reduce release times by 30%.
+            </li>
+            
+          </ul>
+        </div>
+
+        <p className="mt-6 text-gray-50">
+          I’m excited to bring my diverse skill set, from front-end innovations to DevOps automation, to a forward-thinking team. My goal is to craft applications that are both user-friendly and robust, delivering exceptional digital experiences aligned with business objectives.
+        </p>
+      </div>
+    </div>
+  </div>
             </div>
+            </div>
+
 
             <Link className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5" href="/portfolio" passHref>
                 <button>Check My Portfolio</button>

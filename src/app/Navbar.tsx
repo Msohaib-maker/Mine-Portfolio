@@ -1,22 +1,45 @@
 // src/components/Navbar.tsx
 
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/services', label: 'Services' },
+  ];
+
   return (
-    <nav className="fixed w-full bg-black bg-opacity-50 backdrop-blur-sm z-50">
-      <ul className="flex justify-end space-x-8 p-6 pr-12 md:pr-32">
-        <li>
-          <Link href="/" className="text-white hover:text-gray-400 text-lg md:text-xl transition-colors duration-200">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href="/portfolio" className="text-white hover:text-gray-400 text-lg md:text-xl transition-colors duration-200">
-            Portfolio
-          </Link>
-        </li>
-      </ul>
+    <nav className="fixed w-full z-50 flex justify-center mt-4 h-14">
+      <div className="bg-slate-500 bg-opacity-50 backdrop-blur-sm rounded-full">
+        <ul className="flex justify-center items-center">
+          {navLinks.map((link) => (
+           <div
+           key={link.href}
+           className={`w-32 h-14 flex justify-center items-center rounded-full transition-colors duration-200 ${
+             pathname === link.href
+               ? 'bg-orange-500 text-black'
+               : 'text-white hover:text-gray-300'
+           }`}
+         >
+           <li>
+             <Link
+               href={link.href}
+               className="text-lg md:text-xl"
+             >
+               {link.label}
+             </Link>
+           </li>
+         </div>
+         
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
