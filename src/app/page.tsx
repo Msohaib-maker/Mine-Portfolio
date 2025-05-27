@@ -1,7 +1,8 @@
+"use client";
 import { Analytics } from "@vercel/analytics/react";
 // import Image from "next/image";
 import Link from 'next/link';
-import Footer from "./Footer";
+import { useState } from "react";
 
 export default function Home() {
   return (
@@ -54,14 +55,23 @@ export default function Home() {
             <Analytics/>
             
         </div>
-
-        <Footer/>
         </div>
   );
 }
 
 
-function AboutMeSection() {
+const AboutMeSection = () => {
+
+  const pages: string[] = [
+    "I’m a full-stack developer with a deep understanding of building scalable and efficient web applications. From crafting responsive UIs with React and Next.js to architecting secure and performant backend services with Node.js and MongoDB, I bring complete, end-to-end solutions to the table. My strong DevOps knowledge ensures seamless CI/CD workflows and deployment practices that reduce friction and improve productivity.",
+    "I also specialize in game development using Unity and C#, creating immersive environments with HDRP, realistic lighting, and optimized performance. My experience spans from gameplay mechanics to asset integration and scene design, delivering engaging and visually rich experiences for players."
+  ];
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handleClick = () => {
+      setCurrentPage((currentPage+1)%pages.length);
+  }
+
   return (
     <div className="border-4 border-white rounded-tr-3xl rounded-br-3xl p-10 overflow-y-auto">
       <div className="space-y-4 pt-10 pr-4">
@@ -71,43 +81,34 @@ function AboutMeSection() {
           {/* Full Stack Dev Box */}
           <div className="bg-white text-black p-6 rounded-lg shadow-md">
             <p className="text-lg">
-              I’m a full-stack developer with a deep understanding of building scalable and efficient web applications. From crafting responsive UIs with React and Next.js to architecting secure and performant backend services with Node.js and MongoDB, I bring complete, end-to-end solutions to the table. My strong DevOps knowledge ensures seamless CI/CD workflows and deployment practices that reduce friction and improve productivity.
+              {pages[currentPage]}
             </p>
           </div>
 
-          {/* Game Dev Box */}
-          <div className="bg-white text-black p-6 rounded-lg shadow-md mt-6">
-            <p className="text-lg">
-              I also specialize in game development using Unity and C#, creating immersive environments with HDRP, realistic lighting, and optimized performance. My experience spans from gameplay mechanics to asset integration and scene design, delivering engaging and visually rich experiences for players.
-            </p>
-          </div>
+        <div className="flex justify-between items-center w-full mt-8">
+          <button
+            className="p-2 bg-white rounded-md border border-white transform transition-transform duration-200 hover:scale-110"
+            onClick={handleClick}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width={25} height={25} viewBox="0 0 25 25">
+              <path d="M16 20v-4H1V9h15V5l8 7.5z" fill="black" />
+            </svg>
+          </button>
 
-          {/* Highlights List */}
-          <div className="mt-6 space-y-4 text-gray-50">
-            <p><strong>Here are a few highlights of my accomplishments and skills:</strong></p>
-            <ul className="list-disc ml-6 space-y-2">
-              <li>
-                <strong>Next.js Enthusiast</strong> 🌐: Leveraged Next.js for multiple high-performance web applications, optimizing load times and enhancing user engagement with server-side rendering and static generation.
-              </li>
-              <li>
-                <strong>Unity & Game Development</strong> 🎮: Created a cyber city environment using Unity HDRP, crafting visually immersive, neon-lit landscapes while keeping frame rates high for an optimal gaming experience.
-              </li>
-              <li>
-                <strong>DevOps Focus</strong> 🔧: Implemented CI/CD pipelines using GitHub Actions, Docker, and AWS, automating build and deployment processes to reduce release times by 30%.
-              </li>
-            </ul>
+          <div className="px-4 py-2 bg-white rounded-md border border-white text-black text-sm font-medium shadow">
+            Page {currentPage+1}
           </div>
+        </div>
 
-          <p className="mt-6 text-gray-50">
-            I’m excited to bring my diverse skill set, from front-end innovations to DevOps automation and interactive game worlds, to a forward-thinking team. My goal is to build exceptional digital experiences that are robust, engaging, and aligned with real-world goals.
-          </p>
+
+
         </div>
       </div>
     </div>
   );
 }
 
-function Skills() {
+const Skills = () => {
   const skills = [
     { name: "JavaScript", level: 8 },
     { name: "HTML", level: 8 },

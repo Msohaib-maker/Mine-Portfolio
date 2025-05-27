@@ -1,4 +1,3 @@
-import Footer from "../Footer";
 
 export default function Portfolio(){
 
@@ -45,7 +44,6 @@ export default function Portfolio(){
             {Grid()}
             </div>
             
-            <Footer/>
         </div>
     );
 
