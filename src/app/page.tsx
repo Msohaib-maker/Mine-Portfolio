@@ -2,7 +2,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
 import { Page } from "../../components/Page";
-import CodeSVG from "../../SVG/CodeSVG";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -11,11 +10,23 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <div className="mt-28 px-8 mb-10">
           <div className="grid grid-cols-2 items-stretch h-auto">
-            <div className="bg-orange-500 rounded-tl-3xl rounded-bl-3xl flex flex-col items-center justify-center p-10 text-white">
+            {/* <div className="bg-orange-500 rounded-tl-3xl rounded-bl-3xl flex flex-col items-center justify-center p-10 text-white">
               <CodeSVG />
               <h1 className="text-3xl text-center mt-8 italic font-semibold">
                 ❝ Your action matters, not words. ❞
               </h1>
+            </div> */}
+            <div className="border-4 border-white rounded-tl-3xl rounded-bl-3xl flex flex-col items-center justify-center p-10 text-white">
+              <div className="cube transform-style preserve-3d animate-spin-cube">
+                <div className="face front bg-orange-600">Hi</div>
+                <div className="face back bg-orange-700">Mr</div>
+                <div className="face right bg-orange-500">Visitor</div>
+                <div className="face left bg-orange-800">Nice to meet you</div>
+                <div className="face top bg-orange-400">Stay tuned</div>
+                <div className="face bottom bg-orange-900">
+                  Thanks for visiting
+                </div>
+              </div>
             </div>
 
             <Page />
