@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
 import { Page } from "../../components/Page";
 import CodeSVG from "../../SVG/CodeSVG";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
         <div className="p-8">
           <Skills />
         </div>
+
+        <Work />
 
         <br></br>
         <Analytics />
@@ -89,6 +92,170 @@ const Skills = () => {
                   ></div>
                 </div>
               </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Work = () => {
+  const workExperience = [
+    {
+      company: "FoneRep",
+      position: "Junior Php Intern",
+      duration: "March 2024 - June 2024",
+      description:
+        "Led development of scalable web applications using React, Node.js, and MongoDB. Implemented CI/CD pipelines and mentored junior developers.",
+      link: "https://thefonerep.com/",
+      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    },
+    {
+      company: "Vissen CA LLC",
+      position: "Full Stack Developer",
+      duration: "December 2024 - Present",
+      description:
+        "Developed 3D mobile games using Unity and C#. Created engaging gameplay mechanics and optimized performance for various devices.",
+      link: "https://vissen.uz/",
+      technologies: [
+        "React Native web",
+        "Nest",
+        "UniStyles",
+        "CI/CD",
+        "Docker",
+      ],
+    },
+  ];
+
+  return (
+    <div className="w-full px-4 py-12">
+      <h1 className="text-6xl font-bold mb-12 text-white text-center">
+        Work Experience
+      </h1>
+      <div className="max-w-7xl mx-auto relative pt-8">
+        {/* Central Timeline Line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-cyan-400 via-purple-500 to-transparent"></div>
+
+        {workExperience.map((job, index) => (
+          <div key={index} className="relative mb-16">
+            <div className="flex items-end">
+              {index % 2 === 0 ? (
+                <>
+                  <div className="w-[15%] pr-8"></div>
+                  {/* Left Card */}
+                  <div className="w-[30%] pr-8 flex justify-end">
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      viewport={{ once: true, amount: 0.1 }}
+                      className="bg-white/5 border border-cyan-400/40 rounded-xl p-6 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.6),0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300"
+                    >
+                      <div className="mb-4">
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {job.position}
+                        </h3>
+                        <a
+                          href={job.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 text-lg font-semibold transition-colors duration-300"
+                        >
+                          {job.company}
+                        </a>
+                      </div>
+
+                      <span className="text-purple-300 font-medium bg-purple-500/20 px-3 py-1 rounded-full text-sm mb-4 inline-block">
+                        {job.duration}
+                      </span>
+
+                      <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                        {job.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2">
+                        {job.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-200 px-2 py-1 rounded-full text-xs"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Timeline Dot */}
+                  {/* <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-[0_0_15px_rgba(34,211,238,0.6)] z-10"
+                  ></motion.div> */}
+
+                  <div className="w-[30%] pl-8"></div>
+                </>
+              ) : (
+                <>
+                  <div className="w-[55%] pr-8"></div>
+
+                  {/* Timeline Dot */}
+                  {/* <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-[0_0_15px_rgba(34,211,238,0.6)] z-10"
+                  ></motion.div> */}
+
+                  {/* Right Card */}
+                  <div className="w-[30%] pl-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      viewport={{ once: true, amount: 0.1 }}
+                      className="bg-white/5 border border-cyan-400/40 rounded-xl p-6 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.6),0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300"
+                    >
+                      <div className="mb-4">
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {job.position}
+                        </h3>
+                        <a
+                          href={job.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 text-lg font-semibold transition-colors duration-300"
+                        >
+                          {job.company}
+                        </a>
+                      </div>
+
+                      <span className="text-purple-300 font-medium bg-purple-500/20 px-3 py-1 rounded-full text-sm mb-4 inline-block">
+                        {job.duration}
+                      </span>
+
+                      <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                        {job.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2">
+                        {job.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-200 px-2 py-1 rounded-full text-xs"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         ))}

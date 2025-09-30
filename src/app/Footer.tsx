@@ -1,26 +1,24 @@
-// src/app/Footer.tsx
+"use client";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-black text-gray-300">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white">Sohaib Amir</h3>
-            <p className="text-gray-300 leading-relaxed">
+            <h3 className="text-2xl font-bold text-orange-500">Sohaib Amir</h3>
+            <p className="text-gray-400 leading-relaxed max-w-md">
               Full-stack developer and Unity game developer passionate about
-              creating innovative digital experiences and scalable web
-              applications.
+              creating innovative digital experiences and scalable applications.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-5 mt-4">
               <a
                 href="https://github.com/Msohaib-maker"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="hover:text-orange-400 transition-colors duration-300"
                 aria-label="GitHub"
               >
                 <Image
@@ -34,7 +32,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/muhammad-sohaib-8bba7a230/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="hover:text-orange-400 transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <Image
@@ -48,7 +46,7 @@ export default function Footer() {
                 href="https://x.com/Sohaib844590610"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="hover:text-orange-400 transition-colors duration-300"
                 aria-label="Twitter"
               >
                 <Image
@@ -62,7 +60,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="hover:text-orange-400 transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <Image
@@ -75,44 +73,15 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="/portfolio"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
+            <h4 className="text-lg font-semibold text-orange-500">
+              Get In Touch
+            </h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <svg
-                  className="w-5 h-5 text-gray-400"
+                  className="w-5 h-5 text-orange-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -126,14 +95,14 @@ export default function Footer() {
                 </svg>
                 <a
                   href="mailto:afzalsohaib59@gmail.com"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="hover:text-orange-400 transition-colors duration-300"
                 >
                   afzalsohaib59@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <svg
-                  className="w-5 h-5 text-gray-400"
+                  className="w-5 h-5 text-orange-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -151,32 +120,30 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-gray-300">Available for remote work</span>
+                <span>Available for remote work</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Sohaib Amir. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                Terms of Service
-              </a>
-            </div>
+        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} Sohaib Amir. All rights reserved.
+          </p>
+          <div className="flex space-x-6 text-sm mt-3 md:mt-0">
+            <a
+              href="#"
+              className="text-gray-500 hover:text-orange-400 transition-colors duration-300"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="text-gray-500 hover:text-orange-400 transition-colors duration-300"
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>
