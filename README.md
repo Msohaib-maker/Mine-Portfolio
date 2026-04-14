@@ -5,7 +5,15 @@
 
 ## Description
 
-This is my portfolio website which is built on **Next.js** and deployed on [Vercel](https://vercel.com). It showcases all the game and web projects I've worked on. It also includes my contact details for anyone who would like to reach out. You can also use this template for your own portfolio!
+- Portfolio website
+- React version 18
+
+
+### Libraries
+
+- downgraded @react-three/drei@10.7.7 to 9.x
+
+
 
 ### Features:
 - Display of my game and web development projects
