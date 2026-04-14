@@ -14,30 +14,36 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 flex justify-center mt-4 h-14">
-      <div className="bg-slate-500 bg-opacity-50 backdrop-blur-sm rounded-full">
-        <ul className="flex justify-center items-center">
-          {navLinks.map((link) => (
-           <div
-           key={link.href}
-           className={`w-32 h-14 flex justify-center items-center rounded-full transition-colors duration-200 ${
-             pathname === link.href
-               ? 'bg-orange-500 text-black'
-               : 'text-white hover:text-gray-300'
-           }`}
-         >
-           <li>
-             <Link
-               href={link.href}
-               className="text-lg md:text-xl"
-             >
-               {link.label}
-             </Link>
-           </li>
-         </div>
-         
-          ))}
-        </ul>
+    <nav className="fixed w-full z-50 flex justify-center top-6 px-4">
+      <div className="relative group">
+        {/* Glow behind the navbar */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-500 pointer-events-none"></div>
+        
+        {/* Premium Glass Container */}
+        <div className="relative bg-[#0d1320]/75 backdrop-blur-xl border border-cyan-400/20 rounded-full p-2 flex items-center shadow-2xl">
+          <ul className="flex justify-center items-center gap-2 relative z-10 w-full">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href} className="flex">
+                  <Link
+                    href={link.href}
+                    className={`relative flex justify-center items-center h-10 px-8 rounded-full text-sm uppercase tracking-widest font-bold transition-all duration-300 ${
+                      isActive 
+                        ? 'text-white' 
+                        : 'text-gray-400 hover:text-cyan-300 hover:bg-white/5'
+                    }`}
+                  >
+                    {isActive && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full opacity-80 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+                    )}
+                    <span className="relative z-20">{link.label}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </nav>
   );
