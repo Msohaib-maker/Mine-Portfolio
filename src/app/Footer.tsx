@@ -1,151 +1,81 @@
-"use client";
 import Image from "next/image";
+import { agency, navLinks, socials } from "./siteConfig";
+import { MailIcon, SocialIcon } from "./_components/Icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-orange-500">Sohaib Amir</h3>
-            <p className="text-gray-400 leading-relaxed max-w-md">
-              Full-stack developer and Unity game developer passionate about
-              creating innovative digital experiences and scalable applications.
-            </p>
-            <div className="flex space-x-5 mt-4">
-              <a
-                href="https://github.com/Msohaib-maker"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-orange-400 transition-colors duration-300"
-                aria-label="GitHub"
-              >
-                <Image
-                  src="/icons/github.png"
-                  alt="GitHub"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/muhammad-sohaib-8bba7a230/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-orange-400 transition-colors duration-300"
-                aria-label="LinkedIn"
-              >
-                <Image
-                  src="/icons/linkedin.png"
-                  alt="LinkedIn"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a
-                href="https://x.com/Sohaib844590610"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-orange-400 transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <Image
-                  src="/icons/twitter.png"
-                  alt="Twitter"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-orange-400 transition-colors duration-300"
-                aria-label="Instagram"
-              >
-                <Image
-                  src="/icons/instagram.png"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-orange-500">
-              Get In Touch
-            </h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <svg
-                  className="w-5 h-5 text-orange-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <a
-                  href="mailto:afzalsohaib59@gmail.com"
-                  className="hover:text-orange-400 transition-colors duration-300"
-                >
-                  afzalsohaib59@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <svg
-                  className="w-5 h-5 text-orange-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <span>Available for remote work</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Sohaib Amir. All rights reserved.
+    <footer className="border-t border-white/10 bg-black px-4 sm:px-8">
+      {/* Call to action, the target of every Contact / Start a project button */}
+      <div id="contact" className="scroll-mt-24 max-w-6xl mx-auto py-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <div>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white max-w-xl">
+            Have a project in mind?
+          </h2>
+          <p className="mt-4 text-white/60 max-w-md">
+            Tell us about your game, VR experience or automation idea and
+            we&apos;ll get back to you within two working days.
           </p>
-          <div className="flex space-x-6 text-sm mt-3 md:mt-0">
-            <a
-              href="#"
-              className="text-gray-500 hover:text-orange-400 transition-colors duration-300"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-orange-400 transition-colors duration-300"
-            >
-              Terms of Service
-            </a>
-          </div>
         </div>
+        <a
+          href={`mailto:${agency.email}`}
+          className="inline-flex items-center gap-3 self-start md:self-auto rounded-full bg-white px-7 py-4 text-sm font-semibold text-black transition-colors hover:bg-hazel-300 hover:text-black"
+        >
+          <MailIcon className="h-5 w-5" />
+          {agency.email}
+        </a>
+      </div>
+
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 border-t border-white/10 py-12">
+        <div className="col-span-2">
+          <p className="flex items-center gap-2 text-lg font-bold text-white">
+            <Image src={agency.logo} alt="" width={44} height={44} className="h-11 w-11 rounded-full ring-1 ring-white/20 shadow-[0_0_10px_rgba(255,255,255,0.25)]" />
+            {agency.name}
+          </p>
+          <p className="mt-3 max-w-xs text-sm text-white/50 leading-relaxed">
+            {agency.tagline}
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">
+            Explore
+          </h3>
+          <ul className="mt-4 space-y-3">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <a href={`#${link.id}`} className="text-sm text-white/70 hover:text-white transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40">
+            Follow
+          </h3>
+          <ul className="mt-4 space-y-3">
+            {socials.map((social) => (
+              <li key={social.platform}>
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  <SocialIcon platform={social.platform} className="h-4 w-4" />
+                  {social.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between gap-2 border-t border-white/10 py-6 text-xs text-white/40">
+        <p>© {new Date().getFullYear()} {agency.name}. All rights reserved.</p>
+        <p>Remote studio · Working worldwide</p>
       </div>
     </footer>
   );

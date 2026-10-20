@@ -1,51 +1,105 @@
-// src/components/Navbar.tsx
+"use client";
 
-'use client';
-
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { agency, navLinks } from "./siteConfig";
 
 const Navbar = () => {
-  const pathname = usePathname();
+  const [activeId, setActiveId] = useState(navLinks[0].id);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/portfolio', label: 'Portfolio' },
-  ];
+  // Highlight whichever section currently sits in the middle band of the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px" }
+    );
+
+    navLinks.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <nav className="fixed w-full z-50 flex justify-center top-6 px-4">
-      <div className="relative group">
-        {/* Glow behind the navbar */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-500 pointer-events-none"></div>
-        
-        {/* Premium Glass Container */}
-        <div className="relative bg-[#0d1320]/75 backdrop-blur-xl border border-cyan-400/20 rounded-full p-2 flex items-center shadow-2xl">
-          <ul className="flex justify-center items-center gap-2 relative z-10 w-full">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <li key={link.href} className="flex">
-                  <Link
-                    href={link.href}
-                    className={`relative flex justify-center items-center h-10 px-8 rounded-full text-sm uppercase tracking-widest font-bold transition-all duration-300 ${
-                      isActive 
-                        ? 'text-white' 
-                        : 'text-gray-400 hover:text-cyan-300 hover:bg-white/5'
-                    }`}
-                  >
-                    {isActive && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full opacity-80 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
-                    )}
-                    <span className="relative z-20">{link.label}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+      <nav className="max-w-6xl mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
+        <a href="#about" className="flex items-center gap-2 text-white font-bold tracking-tight">
+          <Image src={agency.logo} alt="" width={44} height={44} className="h-11 w-11 rounded-full ring-1 ring-white/20 shadow-[0_0_10px_rgba(255,255,255,0.25)]" priority />
+          {agency.name}
+        </a>
+
+        <ul className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className={`rounded-full px-4 py-2 text-sm transition-colors ${
+                  activeId === link.id
+                    ? "bg-white/10 text-white"
+                    : "text-white/60 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-2">
+          <a
+            href="#contact"
+            className="hidden sm:inline-flex rounded-full bg-hazel-300 px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-white"
+          >
+            Contact
+          </a>
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            className="md:hidden flex h-10 w-10 items-center justify-center rounded-full text-white hover:bg-white/10"
+          >
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" viewBox="0 0 24 24">
+              {menuOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            </svg>
+          </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {menuOpen && (
+        <ul className="md:hidden border-t border-white/10 px-4 py-3">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                onClick={() => setMenuOpen(false)}
+                className={`block rounded-lg px-3 py-3 text-base ${
+                  activeId === link.id ? "text-white bg-white/5" : "text-white/60"
+                }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 block rounded-lg bg-hazel-300 px-3 py-3 text-center text-base font-semibold text-black"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      )}
+    </header>
   );
 };
 
