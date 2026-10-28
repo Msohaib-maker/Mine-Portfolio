@@ -2,7 +2,7 @@
 
 export const agency = {
   name: "OMNIEDSYS",
-  logo: "/logo.png",
+  logo: "/profile-cover.png",
   tagline: "Games, VR and automation, built to ship.",
   email: "afzalsohaib59@gmail.com",
 };
@@ -11,7 +11,7 @@ export const agency = {
 export type Founder = { name: string; role: string; video?: string };
 
 export const founders: Founder[] = [
-  { name: "Sohaib Amir", role: "Founder · Engineering", video: "/videos/founder-video.mp4" },
+  { name: "Sohaib Amir", role: "Founder · Engineering", video: "/videos/Founder Introduction.mp4" },
 ];
 
 export type SocialPlatform = "youtube" | "instagram";
@@ -43,8 +43,8 @@ export const socials: Social[] = [
   {
     platform: "instagram",
     label: "Instagram",
-    handle: "@open_assign",
-    url: "https://www.instagram.com/open_assign/",
+    handle: "@omniedsys",
+    url: "https://www.instagram.com/omniedsys/",
     logo: { src: "/icons/instagram.png" },
     stats: [
       { label: "Followers", value: "100+" },
